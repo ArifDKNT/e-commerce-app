@@ -3,15 +3,22 @@ import './Header.css';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import StoreIcon from '@mui/icons-material/Store';
 import SearchIcon from '@mui/icons-material/Search';
+import { Link } from 'react-router-dom';
+
 function Header() {
     return (
         <div className="header">
-        <div className="header_logo">
+          <Link to={"/"} style={{textDecoration:"none"}}>
+
+
+            <div className="header_logo">
   <StoreIcon fontSize='large' className='header_logoImage'/>
   <h2 className="header_logoTitle">
     DKNTSHOP
   </h2>
         </div>
+          </Link>
+        
   
         <div className="header_search">
   <input type="text" className="header_searchInput" />
@@ -35,12 +42,15 @@ function Header() {
                     Shop
                   </span>
           </div>
-          <div className="nav_itemBasket">
+          <Link to={"/checkout"} style={{textDecoration:"none"}}>
+           <div className="nav_itemBasket">
           <ShoppingBasketIcon  />
                   <span className="nav_itemLineTwo nav_basketCount">
                     0
                   </span>
           </div>
+          </Link>
+         
   
         </div>
       </div>
